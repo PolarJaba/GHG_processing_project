@@ -1,0 +1,9 @@
+**/data/
+/venv/
+/.idea/
+*.pdf
+*.xlsx
+/prometheus/
+/baranova_meteo/
+**/figures
+path_config.py
