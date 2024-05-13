@@ -143,7 +143,6 @@ def save_stats(stats_frame, path, source, name_date):
 
 
 def save_processed_data(dataframe, path, source, name_date):
-    dataframe = dataframe.fillna(-999.9)
     dataframe.to_csv(f'{path}/{source}/data/{source}_{name_date}.csv', sep=';', index=False)
     logging.info(f"Saved {path}/{source}/data/{source}_{name_date}.csv")
 

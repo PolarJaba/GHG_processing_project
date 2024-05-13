@@ -190,6 +190,12 @@ def garbage_adding(frame, garbage_data):
                   (frame['flag'] != 5), 'flag'] = 3
 
 
+def wind_adding(frame, wind_data):
+    wind_data = wind_data[(wind_data['WS10A'] < 3) | ((wind_data['WDI'] >= 95) & (wind_data['WDI'] <= 145))]
+    frame.loc[(frame['datetime'].isin(wind_data['datetime'])) & (frame['flag'] <= 1), 'flag'] = 2
+    print(frame[frame['flag'] == 2])
+
+
 def add_calibrations(postcalibration_path, calibration_coefficients_path, data_path, garbage_file):
     calibration_coefficients = pd.read_csv(calibration_coefficients_path)
     files_lst = all_file_selector(data_path)

@@ -37,6 +37,7 @@ def concat_n_drawer(files_lst, year_key):
     all_data['datetime'] = pd.to_datetime(all_data['datetime'])
 
     """ ALARM (empirical value)"""
+    logging.warning("Using empirical threshold for concentration value: 0.15")
     all_data = all_data[all_data['concentration'] <= 0.15]
 
     plt.figure(figsize=(12, 8))
