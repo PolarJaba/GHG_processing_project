@@ -7,3 +7,5 @@
 /baranova_meteo/
 **/figures
 path_config.py
+worker.py
+test.py
